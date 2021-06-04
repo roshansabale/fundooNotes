@@ -1,0 +1,28 @@
+
+#appbar-header{
+    background-color: #fb0;
+    color: black;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+#search{
+    margin-left: 50%;
+    display: flex;
+    flex-direction: row;
+    margin-top:3px;
+    width: 100%;
+}
+
+#searchIcon{
+    display: flex;
+    margin-top: 4px;
+    height: 100%;
+    pointer-Events: none;
+    align-items: center;
+    justify-Content: center;
+}
+
+#inputInput{
+    padding:1px,1px,1px.0;
+    width:100%;
+}

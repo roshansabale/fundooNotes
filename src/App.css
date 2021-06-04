@@ -56,11 +56,19 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 224px;
+    height: 265px;
     width: 400px;
     padding: 50px;
 }
 
+#fpassword-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 230px;
+    width: 400px;
+    padding: 50px;
+}
 .title-div {
     margin-top: -70px;
     background-color: #d4d4d4;
@@ -92,8 +100,11 @@
 }
 
 .btn {
-    width: 365px;
-    margin-top: -54px;
+    width: 10;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 @keyframes App-logo-spin {
