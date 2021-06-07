@@ -36,13 +36,6 @@
     align-items: center;
 }
 
-.signUp-container {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
-
 #card-container {
     display: flex;
     justify-content: space-between;
@@ -52,29 +45,8 @@
     padding: 50px;
 }
 
-#login-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 265px;
-    width: 400px;
-    padding: 50px;
-}
 
-#fpassword-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 230px;
-    width: 400px;
-    padding: 50px;
-}
-.title-div {
-    margin-top: -70px;
-    background-color: #d4d4d4;
-    height: 69px;
-    width: 100%;
-}
+
 
 #names-div {
     display: flex;
@@ -86,26 +58,11 @@
     width: 48%;
 }
 
-.row-content {
-    width: 100%;
-    margin-top: -32px;
-}
 
-.password-div {
-    margin-top: -32px;
-}
 
-.link-div {
-    margin-top: -53px;
-}
 
-.btn {
-    width: 10;
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
+
+
 
 @keyframes App-logo-spin {
     from {

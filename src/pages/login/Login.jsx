@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { Card, TextField, Button,Snackbar,IconButton} from "@material-ui/core";
 import { Link } from 'react-router-dom';
-import { login, resetPass } from "../services/userService";
+import { login } from "../../services/userService";
+import "./login.scss";
 
-class ResetPassword extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
+      email: "",
+      emailError: "",
       password: "",
       passwordError: "",
-      confirmPassword: "",
-      confirmPasswordError: "",
       snackBarOpen:false,
       snackbarMSG:""
     };
@@ -20,7 +21,26 @@ class ResetPassword extends Component {
     this.setState({snackBarOpen:false})
   };
 
- 
+  handleEmail = (event) => {
+    let mailID = event.target.value;
+    if (
+      event.target.value.match(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      )
+    ) {
+      // console.log("FirstName valid!!");
+      this.setState({
+        email: mailID,
+        emailError: "",
+      });
+    } else {
+      //console.log("Firstname Not valid!!");
+      this.setState({
+        email: mailID,
+        emailError: "Email is not valid",
+      });
+    }
+  };
   handlePassword = (event) => {
     let pwd = event.target.value;
     if (
@@ -38,93 +58,79 @@ class ResetPassword extends Component {
       });
     }
   };
-
-  handleConfirmPassword = (event) => {
-    let confrmPassword = event.target.value;
-    console.log(confrmPassword);
-    if(this.state.password === confrmPassword)
-    {
-      this.setState({
-        //password: confrmPassword,
-        confirmPasswordError: ""
-      })
-    } else {
-      this.setState({
-        confirmPassword: confrmPassword,
-        confirmPasswordError: "Confirm Password not mactch with original password",
-      });
-    }
-  };
-
-  handleResetPassword = async () => {
-    
-    if(this.state.password !== null && this.state.confirmPassword !== null ){
-      let passwordObject = {
-        newPassword : this.state.password
-      };
-      await resetPass(passwordObject).then((response) => {
+  handleLogin = async () => {
+    if(this.state.email !== null && this.state.password !== null ){
+      let loginObject = {
+        email: this.state.email,
+        password: this.state.password
+      }
+      await login(loginObject).then((response) => {
         this.setState({
           snackBarOpen: true,
-          snackbarMSG: response.message,
+          snackbarMSG: "Login Succefully !!",
         });
-        this.props.history.push("/login");
+        this.props.history.push("/dashboard");
       }).catch((error) => {
         this.setState({
           snackBarOpen: true,
-          snackbarMSG: error +"Please check Username and Password"
+          snackbarMSG: "Please check Username and Password"
         });
       })
     }
     else{
       this.setState({
         snackBarOpen:true,
-        confirmPasswordError: "Password required",
+        
+        emailError: "Email required",
         passwordError: "Password required",
         snackbarMSG:" Unable to login check Username and Password!!",
-      });
+      })
     }
   };
 
+
+
   render() {
-    const {id} = this.props.match.params;
-    localStorage.setItem("id",id);
-    console.log("ID:"+id);
     return (
       <div className="signUp-container">
       <Card id="login-container">
        <div className="title-div">
-       <h1>Reset Password </h1>
+       <h1>Login </h1>
        </div>   
         <div className="row-content">
         <TextField
-          id="password"
-          label="password"
+          id="email"
+          label="Email"
           className="row-content"
           variant="outlined"
-          placeholder="Enter password"
+          placeholder="Enter Email"
+          onChange={this.handleEmail}
+          error={!!this.state.emailError}
+          helperText={this.state.emailError}
+          value={this.state.email}
+        /></div>
+        <div className="password-div">
+         <TextField
+          id="password"
+          type="password"
+          className="row-content"
+          label="Password"
+          variant="outlined"
+          placeholder="Enter Password"
           onChange={this.handlePassword}
           error={!!this.state.passwordError}
           helperText={this.state.passwordError}
           value={this.state.password}
-        /></div>
-        <div className="row-content">
-        <TextField
-          id="confirmpassword"
-          label="Confirm password"
-          className="row-content"
-          variant="outlined"
-          placeholder="Enter confirm password"
-          onChange={this.handleConfirmPassword}
-          error={!!this.state.confirmPasswordError}
-          helperText={this.state.confirmPasswordError}
-          value={this.state.confirmPassword}
-        /></div>
-         <div className="link-div"> 
-           <Link to="/login">Login if you have password</Link> 
+        />
+         </div>
+         <div className="link-div">
+           <span>If you not have account already </span> 
+           <Link to="/SignUp"> Sign up</Link><br></br>
+           <span><Link to="/fpassword"> ForgetPassword </Link></span>
          </div>
        <div className="btn">
-        <Button onClick={() => this.handleResetPassword()} variant="contained" color="secondary">
-          Register
+        <Button onClick={() => this.handleLogin()} variant="contained" color="secondary">
+          Login
         </Button>
         <Snackbar  anchorOrigin={{
                             vertical: 'bottom',
@@ -145,4 +151,4 @@ class ResetPassword extends Component {
   }
 }
 
-export default ResetPassword;
+export default Login;

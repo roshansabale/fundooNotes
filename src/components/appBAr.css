@@ -5,24 +5,31 @@
     box-shadow: 0px 0px 0px 0px;
 }
 
-#search{
-    margin-left: 50%;
-    display: flex;
-    flex-direction: row;
-    margin-top:3px;
-    width: 100%;
+#menu-title{
+    display:flex;
 }
 
-#searchIcon{
+#title{
+    margin-top: -39px;
+    /* justify-content: space-between; */
     display: flex;
-    margin-top: 4px;
-    height: 100%;
-    pointer-Events: none;
-    align-items: center;
-    justify-Content: center;
+    margin-left: 44px;
 }
 
 #inputInput{
     padding:1px,1px,1px.0;
-    width:100%;
+    width:385px;
+}
+
+#search-div{
+    display: flex;
+    margin-top: -31px;
+    justify-content: center;
+}
+
+
+#menuicon-div{
+    display: flex;
+    margin-top: -39px;
+    justify-content: flex-end;
 }

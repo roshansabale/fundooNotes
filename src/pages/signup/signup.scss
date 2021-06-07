@@ -1,0 +1,43 @@
+.signUp-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 265px;
+    width: 400px;
+    padding: 50px;
+}
+
+.title-div {
+    margin-top: -70px;
+    background-color: #d4d4d4;
+    height: 69px;
+    width: 100%;
+}
+
+.row-content {
+    width: 100%;
+    margin-top: -32px;
+}
+
+.password-div {
+    margin-top: -32px;
+}
+
+.link-div {
+    margin-top: -53px;
+}
+
+.btn {
+    width: 10;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}

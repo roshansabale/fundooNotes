@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import { Card, TextField, Button,Snackbar,IconButton} from "@material-ui/core";
-import { signUp } from "../services/userService";
+import { signUp } from "../../services/userService";
+import "./signup.scss";
 
 class SignUp extends Component {
 

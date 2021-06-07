@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Card, TextField, Button,Snackbar,IconButton} from "@material-ui/core";
 import { Link } from 'react-router-dom';
-import { resetLink } from "../services/userService";
+import { resetLink } from "../../services/userService";
+import "./resetpassword.scss";
 
 class ForgetPassword extends Component {
   constructor() {
