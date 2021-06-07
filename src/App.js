@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import ForgetPassword from "./pages/ForgetPassword";
 import AppBarComponent from "./components/AppBar";
+import ResetPassword from "./pages/ResetPassword";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/dashboard" component={AppBarComponent}></Route>
           <Route exact path="/fpassword" component={ForgetPassword}></Route>
+          <Route exact path="/resetpassword/:id" component={ResetPassword}></Route>
         </Switch>
       </div>
     </Router>

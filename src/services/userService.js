@@ -28,3 +28,18 @@ export function resetLink(emailId) {
         return error;
     }
 }
+
+export function resetPass(password) {
+    try {
+        const response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/user/reset-password',password,
+        {
+            headers:{
+                Authorization:localStorage.getItem('id')
+                   }
+        });
+        return response;
+    }
+    catch (err) {
+        return err;
+    }
+}

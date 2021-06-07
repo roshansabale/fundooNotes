@@ -146,13 +146,13 @@ class SignUp extends Component {
   handleSignup = async () => {
      if (
       
-      this.state.firstName !== undefined &&
+      this.state.firstName !== "" &&
       
-      this.state.lastName !== undefined &&
+      this.state.lastName !== "" &&
       
-      this.state.email !== undefined &&
+      this.state.email !== "" &&
     
-      this.state.password !== undefined
+      this.state.password !== ""
     ) {
       console.log("From if");
       let signupObject = {
