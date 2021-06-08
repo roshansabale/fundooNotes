@@ -1,2 +1,2 @@
-import PrimarySearchAppBar from "../../components/AppBar"
+import PrimarySearchAppBar from "../../components/Appbar/AppBar"
 <PrimarySearchAppBar></PrimarySearchAppBar>
