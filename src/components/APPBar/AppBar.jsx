@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Toolbar,
   IconButton,
   Typography,
   InputBase,
