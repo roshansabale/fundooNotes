@@ -1,5 +1,5 @@
 import {
-  AppBar,
+  AppBar, 
   IconButton,
   Typography,
   InputBase,
@@ -15,7 +15,7 @@ import ViewStreamIcon from "@material-ui/icons/ViewStream";
 class AppBarComponent extends Component {
   render() {
     return (
-      <AppBar id="appbar-header" position="static">
+      <AppBar id="appbar-header">
         <div id="menu-title">
           <IconButton aria-label="app" color="inherit">
             <Menu />

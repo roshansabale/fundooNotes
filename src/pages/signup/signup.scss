@@ -5,14 +5,15 @@
     align-items: center;
 }
 
-#login-container {
+#card-container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 265px;
+    height: 480px;
     width: 400px;
     padding: 50px;
 }
+
 
 .title-div {
     margin-top: -70px;

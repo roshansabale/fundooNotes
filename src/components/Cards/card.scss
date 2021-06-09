@@ -1,0 +1,34 @@
+
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    padding: 22px;
+}
+
+.card{
+    margin: 50px;
+    width: 350px;
+    height: 60px;
+}
+
+.card-extended{
+    margin: 50px;
+    width: 350px;
+    height: 150px;
+    flex-direction:column;
+}
+
+.input{
+    width: 250px;
+    height: 60px;
+    /* display: flex; */
+    padding-Left: 0px;
+    margin-left: -38px;
+}
+
+.btn-container{
+    justify-content: flex-end;
+    display: flex;
+    margin-right: 6px;
+}
