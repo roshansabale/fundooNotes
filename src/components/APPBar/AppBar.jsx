@@ -1,9 +1,4 @@
-import {
-  AppBar, 
-  IconButton,
-  Typography,
-  InputBase,
-} from "@material-ui/core";
+import { AppBar, IconButton, Typography, InputBase } from "@material-ui/core";
 import React, { Component } from "react";
 import "./appBAr.css";
 import Menu from "@material-ui/icons/Menu";
@@ -20,12 +15,15 @@ class AppBarComponent extends Component {
           <IconButton aria-label="app" color="inherit">
             <Menu />
           </IconButton>
-        <div id="title">
-          <Typography variant="h6"> FundooNotes </Typography>
+          <div id="title">
+            <Typography variant="h6"> FundooNotes </Typography>
           </div>
-        <div id="searchbar">
-          <SearchIcon />
-          <InputBase placeholder="Search…" className="inputRoot inputInput" />
+          <div id="searchbar">
+            <SearchIcon />
+            <InputBase
+              placeholder="Search…"
+              className="inputRoot inputInput search-input"
+            />
           </div>
         </div>
 
