@@ -14,6 +14,8 @@ export function login(loginData) {
     try {
         console.log("SignUp data" + loginData);
         const response = axios.post('http://fundoonotes.incubation.bridgelabz.com/api/user/login', loginData);
+        // console.log(response.data.id);
+        // localStorage.setItem('ID',response);
         return response;
     } catch (error) {
         return error;

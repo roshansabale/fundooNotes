@@ -7,8 +7,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import AutorenewIcon from "@material-ui/icons/Autorenew";
 import ViewStreamIcon from "@material-ui/icons/ViewStream";
 
-class AppBarComponent extends Component {
-  render() {
+export default function AppBarComponent() {
     return (
       <AppBar id="appbar-header">
         <div id="menu-title">
@@ -42,7 +41,5 @@ class AppBarComponent extends Component {
         </div>
       </AppBar>
     );
-  }
-}
-
-export default AppBarComponent;
+  };
+//export default AppBarComponent({setMenuStatus});

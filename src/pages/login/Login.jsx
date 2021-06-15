@@ -13,7 +13,8 @@ class Login extends Component {
       password: "",
       passwordError: "",
       snackBarOpen:false,
-      snackbarMSG:""
+      snackbarMSG:"",
+      tokenId:""
     };
   }
 
@@ -65,10 +66,13 @@ class Login extends Component {
         password: this.state.password
       }
       await login(loginObject).then((response) => {
+        //localStorage.SetItem('ID', response.data.id)
         this.setState({
           snackBarOpen: true,
           snackbarMSG: "Login Succefully !!",
+          tokenId:response.data.id,
         });
+        localStorage.setItem('ID',this.state.tokenId);
         this.props.history.push("/dashboard");
       }).catch((error) => {
         this.setState({
@@ -87,8 +91,6 @@ class Login extends Component {
       })
     }
   };
-
-
 
   render() {
     return (
